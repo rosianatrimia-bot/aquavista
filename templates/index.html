@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+
+            height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.35)
+            ),
+
+            url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1400&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            overflow:hidden;
+        }
+
+        .container{
+
+            width:500px;
+
+            padding:50px;
+
+            border-radius:30px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(12px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+            0 8px 32px rgba(0,0,0,0.3);
+
+            text-align:center;
+
+            color:white;
+        }
+
+        h1{
+
+            font-size:55px;
+
+            margin-bottom:15px;
+
+            font-weight:600;
+        }
+
+        p{
+
+            font-size:18px;
+
+            margin-bottom:40px;
+
+            color:#dfefff;
+        }
+
+        .button-group{
+
+            display:flex;
+
+            flex-direction:column;
+
+            gap:20px;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:16px;
+
+            border:none;
+
+            border-radius:16px;
+
+            font-size:17px;
+
+            font-weight:500;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .pengunjung{
+
+            background:#7ad7ff;
+
+            color:#003049;
+        }
+
+        .petugas{
+
+            background:#ffffff;
+
+            color:#003049;
+        }
+
+        button:hover{
+
+            transform:translateY(-3px);
+
+            opacity:0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AquaVista</h1>
+
+        <p>
+            Sistem Reservasi Wisata Aquarium Raksasa
+        </p>
+
+        <div class="button-group">
+
+            <a href="/form">
+                <button class="pengunjung">
+                    Masuk sebagai Pengunjung
+                </button>
+            </a>
+
+            <a href="/petugas">
+                <button class="petugas">
+                    Masuk sebagai Petugas
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

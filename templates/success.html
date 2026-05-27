@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reservasi Berhasil</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+
+            height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.4),
+                rgba(0,0,0,0.4)
+            ),
+
+            url('https://images.unsplash.com/photo-1520301255226-bf5f144451c1?q=80&w=1400&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            overflow:hidden;
+        }
+
+        .container{
+
+            width:550px;
+
+            padding:50px;
+
+            border-radius:28px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(12px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+            0 8px 32px rgba(0,0,0,0.3);
+
+            text-align:center;
+
+            color:white;
+        }
+
+        .check{
+
+            font-size:70px;
+
+            margin-bottom:20px;
+        }
+
+        h1{
+
+            font-size:42px;
+
+            margin-bottom:18px;
+        }
+
+        p{
+
+            color:#dcefff;
+
+            line-height:1.8;
+
+            margin-bottom:35px;
+
+            font-size:16px;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:16px;
+
+            border:none;
+
+            border-radius:16px;
+
+            background:#7ad7ff;
+
+            color:#003049;
+
+            font-size:16px;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        button:hover{
+
+            transform:translateY(-3px);
+
+            opacity:0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="check">🐠</div>
+
+        <h1>Reservasi Berhasil</h1>
+
+        <p>
+            Terima kasih telah melakukan reservasi di AquaVista.
+            Data kunjungan Anda telah berhasil disimpan.
+        </p>
+
+        <a href="/">
+
+            <button>
+                Kembali ke Halaman Utama
+            </button>
+
+        </a>
+
+    </div>
+
+</body>
+</html>

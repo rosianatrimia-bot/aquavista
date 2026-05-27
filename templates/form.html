@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Reservasi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.4),
+                rgba(0,0,0,0.4)
+            ),
+
+            url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?q=80&w=1400&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            padding:40px;
+        }
+
+        .container{
+
+            width:500px;
+
+            padding:45px;
+
+            border-radius:28px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(12px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+            0 8px 32px rgba(0,0,0,0.3);
+
+            color:white;
+        }
+
+        h1{
+
+            text-align:center;
+
+            margin-bottom:35px;
+
+            font-size:42px;
+
+            font-weight:600;
+        }
+
+        .input-box{
+
+            margin-bottom:22px;
+        }
+
+        label{
+
+            display:block;
+
+            margin-bottom:10px;
+
+            font-size:15px;
+        }
+
+        input{
+
+            width:100%;
+
+            padding:15px;
+
+            border:none;
+
+            border-radius:14px;
+
+            background:rgba(255,255,255,0.9);
+
+            font-size:15px;
+
+            outline:none;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:16px;
+
+            border:none;
+
+            border-radius:16px;
+
+            background:#7ad7ff;
+
+            color:#003049;
+
+            font-size:16px;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:0.3s;
+
+            margin-top:10px;
+        }
+
+        button:hover{
+
+            transform:translateY(-3px);
+
+            opacity:0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Reservasi</h1>
+
+        <form action="/submit" method="post">
+
+            <div class="input-box">
+
+                <label>Nama Pengunjung</label>
+
+                <input
+                    type="text"
+                    name="nama"
+                    placeholder="Masukkan nama"
+                    required
+                >
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Jumlah Orang</label>
+
+                <input
+                    type="number"
+                    name="jumlah"
+                    placeholder="Masukkan jumlah orang"
+                    required
+                >
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Jam Mulai</label>
+
+                <input
+                    type="time"
+                    name="jam_mulai"
+                    required
+                >
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Jam Selesai</label>
+
+                <input
+                    type="time"
+                    name="jam_selesai"
+                    required
+                >
+
+            </div>
+
+            <button type="submit">
+                Lanjut ke Aturan
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

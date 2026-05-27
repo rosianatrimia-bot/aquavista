@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+Env/
+venv/
+env/
+
+# Flask
+instance/
+.session
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+__pycache__/
+*.pyc
+.venv/
+Env/
+.env
+.vscode/
+.idea/

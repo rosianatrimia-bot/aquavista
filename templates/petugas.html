@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Halaman Petugas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            padding:50px;
+
+            background:
+            linear-gradient(
+                rgba(0,0,0,0.45),
+                rgba(0,0,0,0.45)
+            ),
+
+            url('https://images.unsplash.com/photo-1498623116890-37e912163d5d?q=80&w=1400&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            color:white;
+        }
+
+        .container{
+
+            width:100%;
+
+            max-width:1000px;
+
+            margin:auto;
+
+            padding:40px;
+
+            border-radius:28px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(12px);
+
+            border:1px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+            0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        h1{
+
+            text-align:center;
+
+            margin-bottom:35px;
+
+            font-size:42px;
+        }
+
+        table{
+
+            width:100%;
+
+            border-collapse:collapse;
+
+            overflow:hidden;
+
+            border-radius:18px;
+        }
+
+        th{
+
+            background:#7ad7ff;
+
+            color:#003049;
+
+            padding:18px;
+
+            font-size:15px;
+        }
+
+        td{
+
+            padding:18px;
+
+            background:rgba(255,255,255,0.12);
+
+            text-align:center;
+
+            border-bottom:1px solid rgba(255,255,255,0.1);
+        }
+
+        tr:hover td{
+
+            background:rgba(255,255,255,0.2);
+        }
+
+        .button-box{
+
+            margin-top:35px;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:16px;
+
+            border:none;
+
+            border-radius:16px;
+
+            background:#7ad7ff;
+
+            color:#003049;
+
+            font-size:16px;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        button:hover{
+
+            transform:translateY(-3px);
+
+            opacity:0.9;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Data Reservasi Pengunjung</h1>
+
+        <table>
+
+            <tr>
+                <th>Nama</th>
+                <th>Jumlah Orang</th>
+                <th>Jam Mulai</th>
+                <th>Jam Selesai</th>
+            </tr>
+
+            {% for pengunjung in data_pengunjung %}
+
+            <tr>
+
+                <td>{{ pengunjung.nama }}</td>
+
+                <td>{{ pengunjung.jumlah }}</td>
+
+                <td>{{ pengunjung.jam_mulai }}</td>
+
+                <td>{{ pengunjung.jam_selesai }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <div class="button-box">
+
+            <a href="/">
+
+                <button>
+                    Kembali ke Halaman Utama
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
