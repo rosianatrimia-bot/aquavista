@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Form Reservasi</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -20,9 +18,7 @@
         }
 
         body{
-
             min-height:100vh;
-
             display:flex;
             justify-content:center;
             align-items:center;
@@ -32,7 +28,6 @@
                 rgba(0,0,0,0.4),
                 rgba(0,0,0,0.4)
             ),
-
             url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?q=80&w=1400&auto=format&fit=crop');
 
             background-size:cover;
@@ -42,11 +37,8 @@
         }
 
         .container{
-
             width:500px;
-
             padding:45px;
-
             border-radius:28px;
 
             background:rgba(255,255,255,0.12);
@@ -62,76 +54,55 @@
         }
 
         h1{
-
             text-align:center;
-
             margin-bottom:35px;
-
             font-size:42px;
-
             font-weight:600;
         }
 
         .input-box{
-
             margin-bottom:22px;
         }
 
         label{
-
             display:block;
-
             margin-bottom:10px;
-
             font-size:15px;
         }
 
         input{
-
             width:100%;
-
             padding:15px;
-
             border:none;
-
             border-radius:14px;
-
             background:rgba(255,255,255,0.9);
-
             font-size:15px;
-
             outline:none;
         }
 
+        #durasi{
+            margin-bottom:20px;
+            color:#dcefff;
+            font-weight:500;
+            text-align:center;
+        }
+
         button{
-
             width:100%;
-
             padding:16px;
-
             border:none;
-
             border-radius:16px;
-
             background:#7ad7ff;
-
             color:#003049;
-
             font-size:16px;
-
             font-weight:600;
-
             cursor:pointer;
-
             transition:0.3s;
-
             margin-top:10px;
         }
 
         button:hover{
-
             transform:translateY(-3px);
-
             opacity:0.9;
         }
 
@@ -145,7 +116,9 @@
 
         <h1>Reservasi</h1>
 
-        <form action="/submit" method="post">
+        <form action="/submit"
+              method="post"
+              onsubmit="return validasiReservasi()">
 
             <div class="input-box">
 
@@ -167,6 +140,7 @@
                 <input
                     type="number"
                     name="jumlah"
+                    id="jumlah"
                     placeholder="Masukkan jumlah orang"
                     required
                 >
@@ -180,6 +154,8 @@
                 <input
                     type="time"
                     name="jam_mulai"
+                    id="jam_mulai"
+                    onchange="hitungDurasi()"
                     required
                 >
 
@@ -192,10 +168,14 @@
                 <input
                     type="time"
                     name="jam_selesai"
+                    id="jam_selesai"
+                    onchange="hitungDurasi()"
                     required
                 >
 
             </div>
+
+            <p id="durasi"></p>
 
             <button type="submit">
                 Lanjut ke Aturan
@@ -204,6 +184,88 @@
         </form>
 
     </div>
+
+    <script>
+
+        function hitungDurasi() {
+
+            let mulai = document.getElementById("jam_mulai").value;
+            let selesai = document.getElementById("jam_selesai").value;
+            let durasiText = document.getElementById("durasi");
+
+            if(mulai && selesai){
+
+                let jamMulai =
+                    new Date("2026-01-01T" + mulai);
+
+                let jamSelesai =
+                    new Date("2026-01-01T" + selesai);
+
+                let selisih =
+                    (jamSelesai - jamMulai) /
+                    (1000 * 60 * 60);
+
+                if(selisih > 0){
+
+                    durasiText.innerHTML =
+                    "Durasi kunjungan: " +
+                    selisih +
+                    " jam";
+
+                }
+                else{
+
+                    durasiText.innerHTML =
+                    "Jam selesai harus lebih besar dari jam mulai.";
+
+                }
+            }
+        }
+
+        function validasiReservasi(){
+
+            let jumlah =
+                document.getElementById("jumlah").value;
+
+            let mulai =
+                document.getElementById("jam_mulai").value;
+
+            let selesai =
+                document.getElementById("jam_selesai").value;
+
+            if(jumlah < 1){
+
+                alert(
+                    "Jumlah pengunjung minimal 1 orang."
+                );
+
+                return false;
+            }
+
+            if(jumlah > 20){
+
+                alert(
+                    "Maksimal reservasi adalah 20 orang."
+                );
+
+                return false;
+            }
+
+            if(selesai <= mulai){
+
+                alert(
+                    "Jam selesai harus lebih besar dari jam mulai."
+                );
+
+                return false;
+            }
+
+            return confirm(
+                "Apakah data reservasi sudah benar?"
+            );
+        }
+
+    </script>
 
 </body>
 </html>
